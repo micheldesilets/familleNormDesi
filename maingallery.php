@@ -8,23 +8,16 @@
 <!-- 1. Add latest jQuery and fancyBox files -->
 
 <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" />
-
-
-
-
-
-
 
 </head>
 
 <body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js"></script>
     <script src="jquery.fancybox.min.js"></script>
-    <?php 
-$directory = 'M:\WebSites\La_famille_Normandeau-Desilets\images'; //path to thumbnails
-$link = 'M:\WebSites\La_famille_Normandeau-Desilets\images'; //path to full-sized images
+<?php 
+$directory = 'images'; //path to thumbnails
+$link = 'images'; //path to full-sized images
 $allowed_types = array('jpg','jpeg','gif','png'); 
 $aFiles = array();
 $dir_handle = @opendir($directory) or die("There is an error with your image directory!"); 
@@ -41,6 +34,7 @@ $aFiles[] = $file; //filename array
 } 
 closedir($dir_handle); //close directory
 natsort($aFiles); // natural sort by filename 01, 02, 10, 20
+    echo count($aFiles);
 $i=0; 
 foreach ($aFiles as $file) {
 $file_parts = explode('.',$file); //split filenames and put each part in an array
